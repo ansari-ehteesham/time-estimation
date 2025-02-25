@@ -1,0 +1,6 @@
+outs:
+- md5: 481fc44dbcfae7ecf121bd6897f7a1ff.dir
+  size: 404230104
+  nfiles: 43201
+  hash: md5
+  path: data_ingestion
