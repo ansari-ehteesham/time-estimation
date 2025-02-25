@@ -1,0 +1,8 @@
+root_dir: artifacts
+
+data_preparation:
+  root_dir: raw/
+  train_dir: raw/train/
+  test_dir: raw/test/
+  val_dir: raw/val/
+  label_csv: raw/label.csv
