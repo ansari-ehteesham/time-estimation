@@ -174,4 +174,5 @@ cython_debug/
 Documents/
 
 # Dataset
-raw.zip
+raw_data.zip
+artifacts/

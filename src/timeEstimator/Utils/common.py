@@ -3,7 +3,7 @@ from pathlib import Path
 from box import ConfigBox
 from ensure import ensure_annotations
 from box.exceptions import BoxValueError
-from timeEstimator.Exception.exception import CustomeException, catch_ensure_errors
+from timeEstimator.Exception.exception import CustomException, catch_ensure_errors
 from timeEstimator.logging import logger
 
 
@@ -29,7 +29,7 @@ def read_yaml(file_path: Path) -> ConfigBox:
     except BoxValueError:
         raise ValueError("YAML FIle is EMPTY")
     except Exception as e:
-        raise CustomeException(e)
+        raise CustomException(e)
     
 
 # Create Directories

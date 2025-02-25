@@ -6,7 +6,6 @@ from ensure import EnsureError
 # Normal Error Handling
 def error_message_detail(error):
     stack = inspect.stack()
-    # The third entry in the stack is the caller of the exception
     if len(stack) >= 3:
         frame_info = stack[2]
         file_name = frame_info.filename
@@ -20,7 +19,7 @@ def error_message_detail(error):
 
     return error_message
 
-class CustomeException(Exception):
+class CustomException(Exception):
     def __init__(self, error_message):
         super().__init__(error_message)
         self.error_message = error_message_detail(error=error_message)
@@ -37,5 +36,5 @@ def catch_ensure_errors(func):
         try:
             return func(*args, **kwargs)
         except EnsureError as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
     return wrapper

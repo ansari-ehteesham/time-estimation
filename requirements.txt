@@ -11,4 +11,5 @@ ensure
 python-box
 notebook
 setuptools
+dvc[gdrive]
 -e .
