@@ -175,4 +175,4 @@ Documents/
 
 # Dataset
 raw_data.zip
-artifacts/
+!artifacts/*.dvc

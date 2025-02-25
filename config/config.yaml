@@ -3,3 +3,11 @@ root_dir: artifacts
 data_ingestion:
   root_dir: artifacts/
   zip_file: raw_data.zip
+
+data_preprocessed:
+  root_dir: artifacts/data_preprocessed
+  img_dir: artifacts/data_ingestion/images
+  label_csv: artifacts/data_ingestion/label.csv
+  train_dir: artifacts/data_preprocessed/train
+  test_dir: artifacts/data_preprocessed/test
+  val_dir: artifacts/data_preprocessed/val

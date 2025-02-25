@@ -1,1 +1,5 @@
-key: value
+data_preprocessed:
+  data_mean: 0.0
+  data_std: 1.0
+  img_height: 224
+  img_width: 224
