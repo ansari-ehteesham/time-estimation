@@ -176,3 +176,5 @@ Documents/
 # Dataset
 raw_data.zip
 artifacts/
+model
+model_01

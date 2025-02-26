@@ -1,7 +1,8 @@
 from timeEstimator.constant import *
 from timeEstimator.Utils.common import create_directory, read_yaml
 from timeEstimator.entity import (DataIngestionEntity,
-                                  DataPreProcessingEntity)
+                                  DataPreProcessingEntity,
+                                  ModelTrainingEntity)
 
 class ConfigurationManager:
     def __init__(self, params=PARAMS_FILE_PATH, config=CONFIG_FILE_PATH):
@@ -22,7 +23,7 @@ class ConfigurationManager:
     
     def data_preprocessing_config(self):
         config = self.config.data_preprocessed
-        params = self.params.data_preprocessed
+        params = self.params
 
         create_directory([
             config.root_dir,
@@ -45,3 +46,23 @@ class ConfigurationManager:
         )
 
         return config
+    
+    def model_training_config(self):
+        config = self.config.model_training
+        params = self.params
+        create_directory([config.root_dir])
+        entity = ModelTrainingEntity(
+            root_dir = config.root_dir,
+            train_csv = config.train_csv,
+            val_csv = config.val_csv,
+            model_performance = config.model_performance,
+            final_model = config.final_model,
+            checkpoint_model = config.checkpoint_model,
+            img_height = params.img_height,
+            img_width = params.img_width,
+            learning_rate = params.learning_rate,
+            epochs = params.epochs,
+            batch_size = params.batch_size
+        )
+
+        return entity

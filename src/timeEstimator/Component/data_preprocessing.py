@@ -14,27 +14,24 @@ class DataPreProcessing:
 
     def read_img(self, img_dir):
         image = cv2.imread(img_dir, cv2.IMREAD_GRAYSCALE)
-        image = np.expand_dims(image, axis=-1)
+        image = np.repeat(image, 3,axis=-1)
+        resized_img = cv2.resize(image, (self.config.img_height, self.config.img_width), cv2.INTER_AREA)
+        normalized_img = resized_img/255.0
 
-        return image
+        return normalized_img
 
 
     def preprocess(self, x, root_dir):
 
-        aug = Compose([
-            Resize(height=self.config.img_height, width=self.config.img_width, always_apply=True),
-            Normalize(mean=self.config.data_mean, std=self.config.data_std)
-        ])
         img_name = x['img_dir']
         img_dir = os.path.join(self.config.img_dir, img_name)
         img_load = self.read_img(img_dir)
-        augmented_img = aug(image = img_load)
+        img_uint8 = (img_load * 255).astype(np.uint8)
 
-        img_name = img_name.split(".")[0]
         save_dir = os.path.join(root_dir, img_name)
-        np.save(save_dir, augmented_img)
+        cv2.imwrite(save_dir, img_uint8)
 
-        return img_dir
+        return save_dir
 
 
     def load_data(self):

@@ -11,3 +11,11 @@ data_preprocessed:
   train_dir: artifacts/data_preprocessed/train
   test_dir: artifacts/data_preprocessed/test
   val_dir: artifacts/data_preprocessed/val
+
+model_training:
+  root_dir: model
+  train_csv: artifacts/data_preprocessed/train.csv
+  val_csv: artifacts/data_preprocessed/val.csv
+  model_performance: model/Performance
+  final_model: model/clock_model.h5
+  checkpoint_model: model/best_clock_model.h5
