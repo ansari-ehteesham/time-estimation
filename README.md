@@ -1,6 +1,5 @@
 Here's the corrected `README.md` with improved formatting, clearer instructions, and fixes for rendering issues:
 
-```markdown
 # Time Estimation from Analog Clock Images
 
 This project implements a deep learning pipeline to estimate the time displayed on an analog clock from its image. The project uses synthetic data generation, thorough preprocessing, and a regression model built on a ResNet50 backbone with custom layers to predict the hour, minute, and second.
