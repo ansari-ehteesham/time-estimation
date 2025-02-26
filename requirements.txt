@@ -13,4 +13,5 @@ notebook
 setuptools
 dvc[gdrive]
 albumentations
+Flask
 -e .

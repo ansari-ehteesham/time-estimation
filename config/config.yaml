@@ -19,3 +19,6 @@ model_training:
   model_performance: model/Performance
   final_model: model/clock_model.h5
   checkpoint_model: model/best_clock_model.h5
+
+prediction:
+  model_dir: model_01/best_clock_model.h5

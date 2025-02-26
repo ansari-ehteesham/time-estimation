@@ -33,3 +33,7 @@ class ModelTrainingEntity:
     learning_rate: float
     epochs: int
     batch_size: int
+
+@dataclass(frozen=True)
+class PredictionEntity:
+    model_dir: Path

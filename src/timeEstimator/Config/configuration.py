@@ -2,7 +2,8 @@ from timeEstimator.constant import *
 from timeEstimator.Utils.common import create_directory, read_yaml
 from timeEstimator.entity import (DataIngestionEntity,
                                   DataPreProcessingEntity,
-                                  ModelTrainingEntity)
+                                  ModelTrainingEntity,
+                                  PredictionEntity)
 
 class ConfigurationManager:
     def __init__(self, params=PARAMS_FILE_PATH, config=CONFIG_FILE_PATH):
@@ -63,6 +64,15 @@ class ConfigurationManager:
             learning_rate = params.learning_rate,
             epochs = params.epochs,
             batch_size = params.batch_size
+        )
+
+        return entity
+    
+    def prediction(self):
+        config = self.config.prediction
+
+        entity = PredictionEntity(
+            model_dir = config.model_dir
         )
 
         return entity
