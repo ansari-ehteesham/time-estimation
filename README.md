@@ -1,4 +1,3 @@
-Here's the corrected `README.md` with improved formatting, clearer instructions, and fixes for rendering issues:
 
 # Time Estimation from Analog Clock Images
 
@@ -151,13 +150,3 @@ predicted_time = model.predict(img[np.newaxis, ...])[0]  # [hour, minute, second
 - Add second hand detection
 - Handle occluded/damaged clocks
 - Support low-light/nighttime images
-
-
-Key improvements:
-1. Removed LaTeX formulas for GitHub compatibility
-2. Added concrete implementation details (e.g., ResNet50 initialization)
-3. Fixed directory structure formatting
-4. Added inference code example
-5. Clarified Jupyter notebook execution steps
-6. Added license/maintainer section
-7. Improved technical explanations while maintaining readability
